@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="35bb580ed2d2450c8f92e9b7f2c4b0ab" Name="Diagram1">
+        <EntityTypeShape EntityType="REHBERModel.tblCalisan" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="REHBERModel.tblDepartman" Width="1.5" PointX="0.75" PointY="1.5" />
+        <AssociationConnector Association="REHBERModel.FK_Calisan_Departman_DepartmanID" />
+        <AssociationConnector Association="REHBERModel.FK_Calisan_YoneticiID" />
+        <EntityTypeShape EntityType="REHBERModel.tblAyarlar" Width="1.5" PointX="0.75" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

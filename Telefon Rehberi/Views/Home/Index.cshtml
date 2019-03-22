@@ -1,0 +1,52 @@
+﻿@model Telefon_Rehberi.Models.Home.HomeViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<div class="table-responsive">
+    <div id="accordion">
+            <table class="table table-bordered table-condensed table-striped table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">AD</th>
+                    <th scope="col">SOYAD</th>
+                    <th scope="col">TELEFON</th>
+                </tr>
+                </thead>
+                <tbody>
+                        @foreach (var calisan in Model.CalisanList)
+                        {
+                            <tr class="clickable" data-href="Modal('@Url.Action("CalisanGetir", "Home", new {id = calisan.ID})', 'Çalışanı Göster', 70)" data-toggle="collapse" data-target="#collapse-@calisan.ID" aria-expanded="true" aria-controls="collapseExample">
+                                <th scope="row">@calisan.ID</th>
+                                <td>@calisan.Ad.ToUpper()</td>
+                                <td>@calisan.Soyad.ToUpper()</td>
+                                <td>@calisan.Telefon</td>
+                            </tr>
+
+                            <div class="collapse" id="collapse-@calisan.ID" data-parent="#accordion">
+                                <div class="card card-body">
+                                    <div>
+                                        <h4>Çalışan Adı Soyadı: </h4>
+                                        <span>@calisan.Ad @calisan.Soyad</span>
+                                    </div>
+                                    <div>
+                                        <h4>Çalışan Telefonu: </h4>
+                                        <span>@calisan.Telefon</span>
+                                    </div>
+                                    <div>
+                                        <h4>Çalışan Departmanı: </h4>
+                                        <span>@((calisan.DepartmanID == null) ? "YOK" : @calisan.tblDepartman.Ad.ToUpper())</span>
+                                    </div>
+                                    <div>
+                                        <h4>Çalışan Yöneticisi: </h4>
+                                        <span>@((calisan.tblCalisan2 == null) ? "YOK" : (calisan.tblCalisan2.Ad + " " + calisan.tblCalisan2.Soyad).ToUpper())</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                </tbody>
+            </table>
+    </div>
+</div>
