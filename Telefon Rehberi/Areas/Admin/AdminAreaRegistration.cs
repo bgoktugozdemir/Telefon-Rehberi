@@ -17,7 +17,7 @@ namespace Telefon_Rehberi.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { controller = "Login", action = "Index", id = UrlParameter.Optional }
+                new { controller = "Giris", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

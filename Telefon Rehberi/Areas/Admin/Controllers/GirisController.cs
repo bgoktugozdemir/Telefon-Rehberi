@@ -7,7 +7,6 @@ using System.Web.Script.Serialization;
 using System.Web.Security;
 using Rehber.Bl.Interface;
 using Telefon_Rehberi.Areas.Admin.Models.Giris;
-using Telefon_Rehberi.Helpers.Giris;
 
 namespace Telefon_Rehberi.Areas.Admin.Controllers
 {
@@ -43,36 +42,28 @@ namespace Telefon_Rehberi.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Index(GirisViewModel model)
         {
-            if (model.Pass == _ayarlarYonetimi.Get(a => a.Anahtar == "AdminPass").Deger)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "UI");
-            }
-            else
-            {
-                CustomPrincipalSerializeModel serializeModel = new CustomPrincipalSerializeModel
+                if (model.Pass == _ayarlarYonetimi.Get(a => a.Anahtar == "AdminPass").Deger)
                 {
-                    Pass = _ayarlarYonetimi.Get(a => a.Anahtar == "AdminPass").Deger
-                };
-
-                JavaScriptSerializer serializer = new JavaScriptSerializer();
-
-                string userData = serializer.Serialize(serializeModel);
-
-                FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1, model.Pass, DateTime.Now, DateTime.Now.AddMinutes(120), false, userData);
-
-                string encTicket = FormsAuthentication.Encrypt(authTicket);
-                HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
-                Response.Cookies.Add(faCookie);
-
-                //FormsAuthentication.SetAuthCookie(model.Email, model.RememberMe);
-
-                return RedirectToAction("Index", "Home");
+                    Session["UserName"] = "Admin";
+                    return RedirectToAction("Index", "UI");
+                }
             }
 
             this.ErrorMessage("Şifre yanlış!");
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Cikis()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+
+            return RedirectToAction("Index", "Giris");
         }
     }
 }

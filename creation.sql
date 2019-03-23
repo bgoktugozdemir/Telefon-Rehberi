@@ -82,7 +82,8 @@ INSERT INTO tblCalisan VALUES
 	('05002345678', 'Eda', 'Budak', 3, 1),
 	('05003456789', 'Hande', 'Pamuk', 2, 2),
 	('05004567890', 'Selim', 'Serbest', 1, 1),
-	('05005678901', 'Kadir', 'Tokgöz', 1, 1);
+	('05005678901', 'Kadir', 'Tokgöz', 1, 1),
+	('05005678901', 'Ali', 'Baba', NULL, NULL);
 
 INSERT INTO tblAyarlar VALUES
 	('AdminPass', 'bgoktugozdemir');

@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using Rehber.Bl.Interface;
 using Telefon_Rehberi.Areas.Admin.Models.UI;
+using Telefon_Rehberi.Helpers;
 
 namespace Telefon_Rehberi.Areas.Admin.Controllers
 {
+    [UserAuthorize]
     public class UIController : Controller
     {
         private ICalisanYonetimi _calisanYonetimi;
@@ -19,7 +21,6 @@ namespace Telefon_Rehberi.Areas.Admin.Controllers
             _departmanYonetimi = departmanYonetimi;
         }
 
-        // GET: Admin/UI
         public ActionResult Index()
         {
             UIViewModel model = new UIViewModel();

@@ -6,9 +6,11 @@ using System.Web.Mvc;
 using Rehber.Bl.Interface;
 using Rehber.Model.DataModel;
 using Telefon_Rehberi.Areas.Admin.Models.CalisanYonetim;
+using Telefon_Rehberi.Helpers;
 
 namespace Telefon_Rehberi.Areas.Admin.Controllers
 {
+    [UserAuthorize]
     public class CalisanYonetimController : Controller
     {
         private ICalisanYonetimi _calisanYonetimi;

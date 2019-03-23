@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using Rehber.Bl.Interface;
 using Telefon_Rehberi.Areas.Admin.Models.DepartmanYonetim;
+using Telefon_Rehberi.Helpers;
 
 namespace Telefon_Rehberi.Areas.Admin.Controllers
 {
+    [UserAuthorize]
     public class DepartmanYonetimController : Controller
     {
         private IDepartmanYonetimi _departmanYonetimi;
