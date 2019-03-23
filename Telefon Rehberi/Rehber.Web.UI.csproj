@@ -152,6 +152,7 @@
     <Content Include="Areas\Admin\Views\DepartmanYonetim\DepartmanDuzenle.cshtml" />
     <Content Include="Areas\Admin\Views\CalisanYonetim\CalisanDuzenle.cshtml" />
     <Content Include="Areas\Admin\Views\Giris\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Giris\Reset.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -197,6 +198,7 @@
     <Compile Include="Areas\Admin\Controllers\UIController.cs" />
     <Compile Include="Areas\Admin\Models\CalisanYonetim\CalisanDuzenleViewModel.cs" />
     <Compile Include="Areas\Admin\Models\DepartmanYonetim\DepartmanDuzenleViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Giris\GirisResetViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Giris\GirisViewModel.cs" />
     <Compile Include="Areas\Admin\Models\UI\UIViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />

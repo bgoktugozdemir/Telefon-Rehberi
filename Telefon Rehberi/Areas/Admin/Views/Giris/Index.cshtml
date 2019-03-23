@@ -1,6 +1,6 @@
 ﻿@model Telefon_Rehberi.Areas.Admin.Models.Giris.GirisViewModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Giriş";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,29 +10,27 @@
         {
             @Html.Raw(TempData["Alert"].ToString())
         }
-        <!-- form card login -->
+
         <div class="card rounded-0">
             <div class="card-header">
-                <h3 class="mb-0">AdminUI</h3>
+                <h3 class="mb-0">Admin UI Giriş</h3>
             </div>
             <div class="card-body">
                 @using (Html.BeginForm("Index", "Giris"))
                 {
                     @Html.AntiForgeryToken()
                     <div class="form-group">
-                        <label for="uname1">Şifre</label>
-                        @Html.TextBoxFor(model => model.Pass, new { @class = "form-control form-control-lg rounded-0 col-md-12", type = "password", name = "pass", id = "pass", placeholder = "Şifre", /*autocomplete = "new-password",*/ required = "" })
-                        <div class="invalid-feedback">Oops, you missed this one.</div>
+                        <label for="pass">Şifre</label>
+                        @Html.TextBoxFor(model => model.Pass, new { @class = "form-control form-control-lg rounded-0 col-md-12", type = "password", name = "pass", id = "pass", placeholder = "Şifre", required = "" })
+                        <div class="invalid-feedback">Bunu doldurmayı unuttunuz.</div>
                     </div>
                     <div>
-                        <span class="custom-control-description small text-dark">Şifre: <i>bgoktugozdemir</i></span>
+                        <span class="small text-dark">Default Şifre: <i>bgoktugozdemir</i></span>
                     </div>
                     <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Login</button>
                 }
             </div>
-            <!--/card-block-->
         </div>
-        <!-- /form card login -->
-    </div>
 
+    </div>
 </div>

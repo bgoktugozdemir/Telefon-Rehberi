@@ -1,5 +1,6 @@
 /************************************************
-					REHBER
+					REHBER (v1.1)
+					bgoktugozdemir
 ************************************************/
 
 /************************************************
@@ -74,16 +75,24 @@ GO
 INSERT INTO tblDepartman VALUES
 	('Yazýlým'),
 	('Pazarlama'),
-	('IT'),
-	('Ýnsan Kaynaklarý');
+	('Ýnsan Kaynaklarý'),
+	('Hukuk'),
+	('Satýþ'),
+	('Operasyon'),
+	('Muhasebe'),
+	('Finans');
 
 INSERT INTO tblCalisan VALUES
 	('05001234567', 'Berat Göktuð', 'Özdemir', 1, NULL),
 	('05002345678', 'Eda', 'Budak', 3, 1),
-	('05003456789', 'Hande', 'Pamuk', 2, 2),
+	('05003456789', 'Hande', 'Pamuk', 7, 2),
 	('05004567890', 'Selim', 'Serbest', 1, 1),
 	('05005678901', 'Kadir', 'Tokgöz', 1, 1),
-	('05005678901', 'Ali', 'Baba', NULL, NULL);
+	('05006789101', 'Ahmethan', 'Yüce', 8, 10),
+	('05007891011', 'Mert', 'Keser', 6, 10),
+	('05008910111', 'Nurþen', 'Akçay', 4, 10),
+	('05009101112', 'Cansu', 'Kýrým', 4, 1),
+	('05001011121', 'Selçuk', 'Deniz', NULL, NULL);
 
 INSERT INTO tblAyarlar VALUES
 	('AdminPass', 'bgoktugozdemir');

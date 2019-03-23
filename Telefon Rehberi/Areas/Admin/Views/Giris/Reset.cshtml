@@ -1,0 +1,45 @@
+﻿@model Telefon_Rehberi.Areas.Admin.Models.Giris.GirisResetViewModel
+@{
+    ViewBag.Title = "Şifreyi Sıfırla";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6 mx-auto text-left">
+        @if (TempData["Alert"] != null)
+        {
+            @Html.Raw(TempData["Alert"].ToString())
+        }
+
+        <div class="card rounded-0">
+            <div class="card-header">
+                <h3 class="mb-0">Admin UI Şifreyi Sıfırla</h3>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("Reset", "Giris"))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <label for="oldpass">Eski Şifre</label>
+                        @Html.TextBoxFor(model => model.oldPass, new { @class = "form-control form-control-lg rounded-0 col-md-12", type = "password", name = "oldpass", id = "oldpass", placeholder = "Eski Şifre", required = "" })
+                        <div class="invalid-feedback">Bunu doldurmayı unuttunuz.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newpass">Yeni Şifre</label>
+                        @Html.TextBoxFor(model => model.newPass, new { @class = "form-control form-control-lg rounded-0 col-md-12", type = "password", name = "newpass", id = "newpass", placeholder = "Yeni Şifre", autocomplete = "new-password", required = "" })
+                        <div class="invalid-feedback">Bunu doldurmayı unuttunuz.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newpass2">Yeni Şifre (Tekrar)</label>
+                        @Html.TextBoxFor(model => model.newPass2, new { @class = "form-control form-control-lg rounded-0 col-md-12", type = "password", name = "newpass2", id = "newpass2", placeholder = "Yeni Şifre (Tekrar)", required = "" })
+                        <div class="invalid-feedback">Bunu doldurmayı unuttunuz.</div>
+                    </div>
+                    <button type="submit" class="btn btn-info btn-lg float-right" id="btnLogin">Şifreyi Değiştir</button>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>

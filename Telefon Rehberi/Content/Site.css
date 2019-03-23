@@ -1,9 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
+﻿/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -18,4 +13,17 @@ textarea {
 
 table tr.clickable{
     cursor:pointer;
+}
+
+.container.full {
+    margin: 0 auto;
+    max-width: 100%;
+}
+.container.w90 {
+    margin: 0 auto;
+    max-width: 90%;
+}
+.container.w80 {
+    margin: 0 auto;
+    max-width: 80%;
 }
